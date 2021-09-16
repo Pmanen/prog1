@@ -6,7 +6,7 @@ public class Mondriaan
 {
   public static void main(String[] args)
   {
-    speed(1);
+    speed(20);
     makeRectangles(100);
   }
 
@@ -56,7 +56,7 @@ public class Mondriaan
   }
 
   public static void buildHelper(int size){
-    goSomewhere(size, random(0, 15 - size), random(0, 30 - size));
+    goSomewhere(size, random(0, 16 - size), random(0, 31 - size));
   }
 
   public static void makeRectangles(int n){
