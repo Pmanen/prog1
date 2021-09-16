@@ -2,20 +2,30 @@ package nl.ru.ai.p4ai.exercise2;
 
 import static nl.ru.ai.karel.Karel.*;
 
+// Cody van Haalen - s1075021
+// Pepijn van Manen - s4848004
+
 public class Mondriaan
 {
   public static void main(String[] args)
   {
-    speed(20);
-    makeRectangles(100);
+    speed(1);
+    makeRectangles(1000);
+  }
+
+  public static void safeBall()
+  {
+    if (!onBall())
+      putBall();
   }
 
   public static void makeLine(int n)
   {
-    while (n-- > 0)
-    {
-      if (!onBall())
-        putBall();
+    if (n == 0) {
+      safeBall();
+    }
+    while (n-- > 0){
+      safeBall();
       step();
     }
   }
@@ -28,11 +38,12 @@ public class Mondriaan
     }
   }
 
-  public static void makeRectangle(int size, int useless)
+  public static void makeRectangle(int sizeY, int sizeX, int useless)
   {
-    while (useless-- > 0)
-    {
-      makeLine(size);
+    while (useless-- > 0) {
+      makeLine(sizeY - 1);
+      turnRight();
+      makeLine(sizeX - 1);
       turnRight();
     }
   }
@@ -42,12 +53,12 @@ public class Mondriaan
       turnRight();
   }
 
-  public static void goSomewhere(int size, int yOffset, int xOffset){
+  public static void goSomewhere(int sizeY, int sizeX, int yOffset, int xOffset){
     walk(yOffset);
     turnRight();
     walk(xOffset);
     turnLeft();
-    makeRectangle(size, 4);
+    makeRectangle(sizeY, sizeX, 2);
     turn(3);
     walk(xOffset);
     turnLeft();
@@ -55,14 +66,14 @@ public class Mondriaan
     turn(2);
   }
 
-  public static void buildHelper(int size){
-    goSomewhere(size, random(0, 16 - size), random(0, 31 - size));
+  public static void buildHelper(int sizeY, int sizeX){
+    goSomewhere(sizeY, sizeX, random(0, 16 - sizeY), random(0, 31 - sizeX));
   }
 
   public static void makeRectangles(int n){
     while (n-- > 0)
     {
-      buildHelper(random(1, 16));
+      buildHelper(random(1, 16), random(1, 31));
     }
   }
 }
