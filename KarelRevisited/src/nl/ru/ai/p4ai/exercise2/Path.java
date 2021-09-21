@@ -1,3 +1,5 @@
+// Cody van Haalen - s1075021
+// Pepijn van Manen - s4848004
 package nl.ru.ai.p4ai.exercise2;
 
 import static nl.ru.ai.karel.Karel.*;
