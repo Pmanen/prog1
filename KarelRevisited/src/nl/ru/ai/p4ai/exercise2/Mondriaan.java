@@ -1,16 +1,15 @@
+// Cody van Haalen - s1075021
+// Pepijn van Manen - s4848004
 package nl.ru.ai.p4ai.exercise2;
 
 import static nl.ru.ai.karel.Karel.*;
-
-// Cody van Haalen - s1075021
-// Pepijn van Manen - s4848004
 
 public class Mondriaan
 {
   public static void main(String[] args)
   {
-    speed(1);
-    makeRectangles(1000);
+    speed(40);
+    makeRectangles(random(2,4));
   }
 
   public static void safeBall()
