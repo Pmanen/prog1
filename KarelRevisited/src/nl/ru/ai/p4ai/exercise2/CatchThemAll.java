@@ -1,3 +1,5 @@
+// Cody van Haalen - s1075021
+// Pepijn van Manen - s4848004
 package nl.ru.ai.p4ai.exercise2;
 
 import static nl.ru.ai.karel.Karel.*;
@@ -5,7 +7,8 @@ import static nl.ru.ai.karel.Karel.*;
 public class CatchThemAll
 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     map("pokemap.map");
     speed(40);
     collectBalls();
