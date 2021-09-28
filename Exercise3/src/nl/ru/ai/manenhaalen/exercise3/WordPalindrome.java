@@ -1,3 +1,5 @@
+//Cody van Haalen s1075021
+// Pepijn van Manen s484004
 package nl.ru.ai.manenhaalen.exercise3;
 
 import java.util.Scanner;
