@@ -9,11 +9,8 @@ public class NewtonRaphson
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        double inputNumber;
-        double root = 1;
-        double formula;
-        double derivate;
-        double approximate;
+        double inputNumber, root, formula, derivate, approximate;
+        root = 1;
 
         System.out.println("This tool will approximate the root of a number using the Newton-Raphson formula.");
         do
@@ -21,7 +18,7 @@ public class NewtonRaphson
             System.out.println("Please enter any number above zero.");
             inputNumber = input.nextDouble();
         }
-        while (inputNumber < 0);
+        while (inputNumber <= 0);
 
         do
         {

@@ -13,6 +13,7 @@ public class WordPalindrome
         System.out.println("Please enter a word to see if it's a palindrome or not.");
         String inputString = input.next();
         int wordCount = inputString.length() - 1;
+        System.out.println(inputString + ": " + wordCount);
         int startCount = 0;
         char first;
         char last;
@@ -21,16 +22,16 @@ public class WordPalindrome
         {
             first = inputString.charAt(startCount++);
             last = inputString.charAt(wordCount--);
-            if(first ==  last && wordCount == 0)
+            if (first != last)
+            {
+                System.out.println(inputString +" is not a palindrome.");
+                wordCount = -1;
+            }
+            else if (wordCount <= 0)
             {
                 System.out.println(inputString +" is a palindrome.");
                 wordCount = -1;
             }
-            else if(first != last)
-            {
-                System.out.println(inputString +" is not a palindrome.");
-                wordCount = -1;
-            };
         }
     }
 }
