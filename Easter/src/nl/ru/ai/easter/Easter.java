@@ -4,14 +4,23 @@ public class Easter
 {
   static boolean isLeapYear(int year)
   {
-    // implement this function
-    return false;
+    return (year % 4 == 0 && (year % 400 == 0 || year % 100 != 0));
   }
 
   static int numberOfDaysInMonth(int year, Month month)
   {
-    // implement this function
-    return 0;
+    switch(month)
+    {
+      case FEBRUARY:
+        return isLeapYear(year)? 29 : 28;
+      case APRIL:
+      case JUNE:
+      case SEPTEMBER:
+      case NOVEMBER:
+        return (30);
+      default:
+        return (31);
+    }
   }
 
   static Month easterMonth(int year)
@@ -49,8 +58,28 @@ public class Easter
     // implement this function
   }
 
+  static void printLabels(){
+    System.out.print("Su Mo Tu We Th Fr Sa");
+  }
+
+  static void printLabelRow(){
+    printLabels();
+    System.out.print("  ");
+    printLabels();
+    System.out.print("  ");
+    printLabels();
+  }
+
+  printMonthRow(int seq){
+
+  }
+
+  static void showYear(int year){
+    printLabelRow();
+  }
+
   public static void main(String[] arguments)
   {
-    // implement this function
+    showYear(2021);
   }
 }
